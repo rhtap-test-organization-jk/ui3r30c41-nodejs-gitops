@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ui3r30c41-nodejs-gitops
+  description: This is GitOps manifest for ui3r30c41-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ui3r30c41-nodejs
+    backstage.io/kubernetes-id: ui3r30c41-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: ui3r30c41-nodejs-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ui3r30c41-nodejs
